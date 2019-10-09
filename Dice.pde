@@ -7,9 +7,23 @@ void setup()
 
 void draw()
 {
-  background(127);
-  Die bob = new Die(5,5);
-  bob.show();
+	
+	int sum = 0;
+  	background(127);
+  	for(int y = 10; y <= 350; y += 35)
+  	{
+  		for(int x = 10; x <= 385; x += 35)
+  		{
+			Die bob = new Die(x, y);
+  			bob.show();
+  			sum += bob.rand;
+
+   		}
+  	}
+
+  	textSize(15);
+  	fill(0);
+  	text("Total: " + sum, 200, 370);
 }
 
 void mousePressed()
@@ -37,14 +51,16 @@ class Die //models one single dice cube
   {
     noStroke();
     fill(255);
-    rect(myX, myY, 30, 30);
+    rect(myX, myY, 30, 30, 12);
     fill(0);
     if(rand == 1)
     {
-      ellipse(myX + 15, myY + 15, 5, 5);   
+       fill(255, 0, 0);
+       ellipse(myX + 15, myY + 15, 5, 5);   
     }
     else if(rand == 2)
     {
+      fill(0);
       ellipse(myX + 10, myY + 20, 5, 5);   
       ellipse(myX + 20, myY + 10, 5, 5); 
     }
