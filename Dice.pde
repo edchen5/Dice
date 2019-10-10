@@ -12,7 +12,7 @@ void draw()
   	background(127);
   	for(int y = 10; y <= 350; y += 35)
   	{
-  		for(int x = 10; x <= 385; x += 35)
+  		for(int x = 30; x <= 350; x += 35)
   		{
 			Die bob = new Die(x, y);
   			bob.show();
