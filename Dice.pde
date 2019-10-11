@@ -7,7 +7,6 @@ void setup()
 
 void draw()
 {
-	int high = 0;
 	int sum = 0;
   	background(127);
   	for(int y = 10; y <= 350; y += 35)
@@ -17,10 +16,6 @@ void draw()
 			Die bob = new Die(x, y);
   			bob.show();
   			sum += bob.rand;
-        if(high >= sum)
-        {
-          high = sum;
-        }
    		}
   	}
 
